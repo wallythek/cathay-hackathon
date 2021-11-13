@@ -1,9 +1,10 @@
 from tkinter import *
-from tkinter import ttk
+from tkinter import ttk, messagebox
 import tkinter as tk
 from PIL import ImageTk, Image
 import random
 import os
+import time
 
 def UI():
 
@@ -65,10 +66,24 @@ def UI():
 
 def popup():
 	x = int(np.random.uniform(0,60))
+	global stampnum
+	stampnum = 0
+	def popstamp():
+		master = tk.Tk()
+		master.withdraw()
+		response = messagebox.showinfo('Stamp', "Click to collect stamp!")
+		if(response == "ok"):
+			stampnum += 1
+			master = tk.Tk()
+			master.withdraw()
+			messagebox.showinfo('Stamp', f"You now have {stampnum} stamps!")
+		
 	while True:
 		now = str(datetime.now().time())
 		if(x == int(now[3:5])):
 			popstamp()
+			time.sleep(60)
+			
 			x = int(np.random.uniform(0,60))
 			
 t1 = Thread(target=UI)
