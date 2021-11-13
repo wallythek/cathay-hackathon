@@ -4,6 +4,7 @@ from tkinter import *
 from tkinter import ttk
 import tkinter as tk
 from PIL import ImageTk, Image
+import string
 import random
 import os
 
