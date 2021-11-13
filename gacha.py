@@ -107,19 +107,19 @@ def random_item():
 
 		window=tk.Tk()
 		window.title("Rand surprise")
-		window.geometry("300x50")
+		window.geometry("500x100")
 		window.resizable(0,0)
 
 		x = 0
 		clicked=tk.StringVar()
 		e1=tk.ttk.Combobox(window, width=12, textvariable=clicked)
 		e1['values']=list(randdict.keys())
-		e1.grid(sticky="E", row=0, column=2)
+		e1.grid(row=0, column=1)
 		e1.current(0)
 		e1.bind("<<ComboboxSelected>>",x)
 
 		b1=tk.Button(window, text="Draw", width=12, command=choose)
-		b1.grid(sticky="W", row=1, column=3)
+		b1.grid(sticky="W", row=1, column=2)
 
 		b1=tk.Button(window, text="Cancel", width=12, command=cancel)
 		b1.grid(sticky="E", row=1, column=0)
