@@ -13,7 +13,7 @@ users = []
 for i in range(5):
     username = "".join(random.choices(string.ascii_lowercase + string.digits,
                 k = random.randint(6, 10))) + str(i)
-    profilePic = random.choice([Image.open("images.jpg"), Image.open("images-1.jpg"),
+    profilePic = random.choice([Image.open("images-0.jpg"), Image.open("images-1.jpg"),
                 Image.open("images-2.jpg"), Image.open("images-3.jpg"), Image.open("images-4.jpg")])
     descr = random.choice(["Hi", "Nice to meet you", "I'm fine thank you"])
     password = "".join(random.choices(string.ascii_lowercase
