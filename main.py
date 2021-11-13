@@ -4,6 +4,7 @@ from tkinter import *
 from tkinter import ttk
 import UI
 import gacha
+import randomitem
 
 def cancel():
     window.destroy()
@@ -31,7 +32,7 @@ b1.grid(sticky="E", row=1, column=0)
 b1=Button(window, text="Go", width=12, command=gacha)
 b1.grid(sticky="E", row=1, column=1)
 
-b1=Button(window, text="Go", width=12, command=randitem)
+b1=Button(window, text="Go", width=12, command=randomitem)
 b1.grid(sticky="E", row=1, column=2)
 
 b1=Button(window, text="Go", width=12, command=community)
