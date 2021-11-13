@@ -5,6 +5,7 @@ from PIL import ImageTk, Image
 import random
 import os
 import time
+from threading import Thread, Lock
 
 def UI():
 
