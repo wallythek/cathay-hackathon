@@ -9,6 +9,8 @@ import tkinter as tk
 from PIL import ImageTk, Image
 import time
 from tkinter import messagebox
+from tkinter.ttk import *
+
 
 def gacha(pie_png):
 
@@ -82,12 +84,80 @@ def gacha_spin(pie_png):
 	messagebox.showinfo('Prize', f"You got {prize}!")
 	pygame.display.quit()
 	
-def random_item(x):
-#x is chosen category
-	randdict = {"Phone":["iPhone13", "Samsung Z Flip 3", "Nokia 3310"],
-			   "Stationery":["Pen", "Eraser", "Calculator"],
-			   "Watch":["G-Shock", "Rolex", "Seiko"]}
-	return(random.choice(randdict[x]))
+def random_item():
+
+	randdict = {"Phone":["iPhone13", "Samsung Z Flip 3", "Nokia 3310"], "Stationery":["Pen", "Eraser", "Calculator"], "Watch":["G-Shock", "Rolex", "Seiko"], "Experience":["3-days staycation in HK", "Round Trip to Japan", "Buffet voucher"]}
+	
+	def proceed():
+		window.destroy()
+		chooserand()
+
+	def cancel():
+		window.destroy()
+
+	def chooserand():
+		def choose():
+			    x = e1.get()
+			    y = random.choice(randdict[x])
+			    window.destroy()
+			    master = tk.Tk()
+			    master.withdraw()
+			    messagebox.showinfo('Prize', f"You got {y}!")
+
+
+		window=tk.Tk()
+		window.title("Rand surprise")
+		window.geometry("500x100")
+		window.resizable(0,0)
+
+		x = 0
+		clicked=tk.StringVar()
+		e1=tk.ttk.Combobox(window, width=12, textvariable=clicked)
+		e1['values']=list(randdict.keys())
+		e1.grid(row=0, column=1)
+		e1.current(0)
+		e1.bind("<<ComboboxSelected>>",x)
+
+		b1=tk.Button(window, text="Draw", width=12, command=choose)
+		b1.grid(sticky="W", row=1, column=2)
+
+		b1=tk.Button(window, text="Cancel", width=12, command=cancel)
+		b1.grid(sticky="E", row=1, column=0)
+
+		col_count, row_count = window.grid_size()
+		for col in range(col_count):
+		    window.grid_columnconfigure(col, minsize=190)
+
+		for row in range(row_count):
+		    window.grid_rowconfigure(row, minsize=50)
+    
+		window.mainloop()
+
+	window=tk.Tk()
+	window.title("Random surprise")
+	window.geometry("740x100")
+	window.resizable(0,0)
+	
+	l1=Label(window, text="Asia Miles you now have:")
+	l1.grid(sticky="W", row=0, column=1)
+	
+	l1=Label(window, text=", are you sure you want to draw?")
+	l1.grid(sticky="W", row=0, column=2)
+	
+	b1=tk.Button(window, text="Yes!", width=12, command=proceed)
+	b1.grid(sticky="W", row=1, column=3)
+
+	b1=tk.Button(window, text="Not really", width=12, command=cancel)
+	b1.grid(sticky="E", row=1, column=0)
+
+	col_count, row_count = window.grid_size()
+
+	for col in range(col_count):
+		window.grid_columnconfigure(col, minsize=190)
+
+	for row in range(row_count):
+		window.grid_rowconfigure(row, minsize=50)
+	window.mainloop()
 	
 def popup():
 	x = int(np.random.uniform(0,60))
