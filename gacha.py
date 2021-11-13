@@ -4,8 +4,31 @@ from threading import Thread
 from time import sleep
 import sys
 import random
+import pygame
 
 def gacha():
+	
+
+def gacha_spin():
+	pygame.init()
+	clock = pygame.time.Clock()
+	screen = pygame.display.set_mode([600,600])
+	pikachu = pygame.image.load("piechart.png")
+	pikachu_rect = pikachu.get_rect(center= (300,300))
+	angle = 0
+	
+	while True:
+		for event in pygame.event.get():
+			if event.type == pygame.QUIT:
+				pygame.quit()
+				sys.exit()
+			angle += 1
+			screen.fill((255,255,255))
+			pikachu = pygame.transform.rotozoom(pikachu,angle,1)
+			pikachu_rect = pikachu.get_rect(center = (300,300))
+			screen.blit(pikachu, pikachu_rect)
+			pygame.display.flip()
+			clock.tick(30)
 	
 def random_item(x):
 #x is chosen category
@@ -20,6 +43,7 @@ def popup():
 		now = str(datetime.now().time())
 		if(x == int(now[3:5])):
 			popstamp()
+			x = int(np.random.uniform(0,60))
 			
 """def timer(x):
     for i in range(x):
