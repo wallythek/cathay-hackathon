@@ -109,4 +109,8 @@ for i in range(5):
     descr = random.choice(["Hi", "Nice to meet you", "I'm fine thank you"])
     password = "".join(random.choices(string.ascii_lowercase + string.ascii_uppercase + string.digits, k = random.randint(6, 10)))
     
+    # ensures no duplicate usernames
+    while (username in [user.getUsername() for user in users]):
+        username = "".join(random.choices(string.ascii_lowercase + string.digits, k = random.randint(6, 10))) + str(i)
+
     users.append(User(i, username, descr, password))
