@@ -12,7 +12,7 @@ from tkinter import messagebox
 from tkinter.ttk import *
 
 
-def gacha():
+def gachaa():
 	pie_png = "pikachu.png"
 	def proceed():
 		window.destroy()
