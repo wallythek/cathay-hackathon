@@ -8,8 +8,20 @@ import randomitem
 import voteUI
 
 def cancel():
-    window.destroy()
-
+	window.destroy()
+def healthy():
+	cancel()
+	UI.run()
+def gaacha():
+	cancel()
+	gacha.gachaa()
+def randi():
+	cancel()
+	randomitem.random_item()
+def community():
+	cancel()
+	voteUI.()
+	
 root=Tk()
 root.title("Portal")
 root.geometry("800x460")
@@ -27,13 +39,13 @@ l1.grid(row=0, column=2)
 l1=Label(root, text="Community")
 l1.grid(row=0, column=3)
 
-b1=Button(root, text="Go", width=12, command=UI.run)
+b1=Button(root, text="Go", width=12, command=healthy)
 b1.grid(row=1, column=0)
 
-b1=Button(root, text="Go", width=12, command=gacha.gachaa)
+b1=Button(root, text="Go", width=12, command=gaacha)
 b1.grid(row=1, column=1)
 
-b1=Button(root, text="Go", width=12, command=randomitem.random_item)
+b1=Button(root, text="Go", width=12, command=randi)
 b1.grid(row=1, column=2)
 
 b1=Button(root, text="Go", width=12, command=community)
