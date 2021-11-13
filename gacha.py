@@ -13,7 +13,7 @@ def proceed():
 	window.destroy()
 
 def cancel():
-    window.destroy()
+	window.destroy()
 
 def gacha(pie_png):
 	window=Tk()
