@@ -19,8 +19,11 @@ l1.grid(sticky="W", row=0, column=0)
 l1=Label(window, text="Gacha")
 l1.grid(sticky="W", row=0, column=1)
 
-l1=Label(window, text="Community")
+l1=Label(window, text="Random Box")
 l1.grid(sticky="W", row=0, column=2)
+
+l1=Label(window, text="Community")
+l1.grid(sticky="W", row=0, column=3)
 
 b1=Button(window, text="Go", width=12, command=UI.run)
 b1.grid(sticky="E", row=1, column=0)
@@ -28,11 +31,14 @@ b1.grid(sticky="E", row=1, column=0)
 b1=Button(window, text="Go", width=12, command=gacha)
 b1.grid(sticky="E", row=1, column=1)
 
-b1=Button(window, text="Go", width=12, command=community)
+b1=Button(window, text="Go", width=12, command=randitem)
 b1.grid(sticky="E", row=1, column=2)
 
+b1=Button(window, text="Go", width=12, command=community)
+b1.grid(sticky="E", row=1, column=3)
+
 b1=Button(window, text="Close Window", width=12, command=cancel)
-b1.grid(sticky="W", row=2, column=2)
+b1.grid(sticky="W", row=2, column=3)
 
 col_count, row_count = window.grid_size()
 
