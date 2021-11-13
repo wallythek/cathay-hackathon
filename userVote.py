@@ -101,10 +101,8 @@ class User:
 
 users = []
 for i in range(5):
-    username = "".join(random.choices(string.ascii_lowercase + string.digits,
-                k = random.randint(6, 10))) + str(i)
+    username = "".join(random.choices(string.ascii_lowercase + string.digits, k = random.randint(6, 10))) + str(i)
     descr = random.choice(["Hi", "Nice to meet you", "I'm fine thank you"])
-    password = "".join(random.choices(string.ascii_lowercase + string.digits,
-                k = random.randint(6, 10)))
+    password = "".join(random.choices(string.ascii_lowercase + string.ascii_uppercase + string.digits, k = random.randint(6, 10)))
     
     users.append(User(i, username, descr, password))
