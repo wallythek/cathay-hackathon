@@ -159,23 +159,3 @@ def random_item():
 		window.grid_rowconfigure(row, minsize=50)
 	window.mainloop()
 	
-def popup():
-	x = int(np.random.uniform(0,60))
-	while True:
-		now = str(datetime.now().time())
-		if(x == int(now[3:5])):
-			popstamp()
-			x = int(np.random.uniform(0,60))
-			
-"""def timer(x):
-    for i in range(x):
-        sleep(60)   
-    popstamp() #stops program after timer runs out, you could also have it print something or keep the user from attempting to answer any longer
-
-def question():
-    answer = input("foo?")
-
-t1 = Thread(target=timer)
-t2 = Thread(target=question)
-t1.start() #Calls first function
-t2.start() #Calls second function to run at same time"""
