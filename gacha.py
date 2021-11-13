@@ -63,7 +63,7 @@ def gacha_spin(pie_png):
 	angle = 0
 	r = int(np.random.uniform(20,30))
 	end = start + r
-	prize = "iMac"
+	prize = "Apple voucher"
 	while int(time.time())<end:
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
