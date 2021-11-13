@@ -1,6 +1,7 @@
 import random
 import string
 
+# modelling a user post, containing an image, a description, a vote count and the list of voters
 class UserPost:
     def __init__(self, image, descr):
         self.__image = image
@@ -35,6 +36,8 @@ class UserPost:
     def removeVoter(self, user):
         self.__voters.remove(user)
 
+# modelling a user, containing the id, the username, the profile description, the password, the number of miles
+# and the post (if any) the user posted
 class User:
     def __init__(self, accId, username, descr, password):
         self.__accId = accId
@@ -99,6 +102,7 @@ class User:
             post.setVoteCount(post.getVoteCount() - 1)
             post.removeVoter(self)
 
+# assume 5 users in the prototype, and the current user is users[0]
 users = []
 for i in range(5):
     username = "".join(random.choices(string.ascii_lowercase + string.digits, k = random.randint(6, 10))) + str(i)
