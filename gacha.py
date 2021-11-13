@@ -138,6 +138,15 @@ def random_item():
 	window.geometry("740x100")
 	window.resizable(0,0)
 	
+	image1 = Image.open("randombox.jpg")
+	test = ImageTk.PhotoImage(image1)
+
+	label1 = tk.Label(image=test)
+	label1.image = test
+
+	# Position image
+	label1.place(x=-50, y=0)
+	
 	l1=Label(window, text="Asia Miles you now have:")
 	l1.grid(sticky="W", row=0, column=1)
 	
