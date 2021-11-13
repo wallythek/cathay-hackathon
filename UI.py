@@ -39,15 +39,16 @@ def UI():
 	stepy.place(x=50,y=400)
 	tns= Label(root,bg="white",text="141k",font=("Arial",30))
 	tns.place(x=90,y=390)
+	global c
 	c = 500
 	def walk(label):
     	c = 500
     	def count():
-        	global c
-        	c +=1
-        	label.config(text="+"+str(c))
-        	label.after(random.randint(300,700),count)
-    	count()
+		global c
+		c +=1
+		label.config(text="+"+str(c))
+		label.after(random.randint(300,700),count)
+	count()
 	rc = tk.Label(root,fg="black",font=("Arial",30),bg="white")
 	rc.place(x=240,y=390)
 	walk(rc)
