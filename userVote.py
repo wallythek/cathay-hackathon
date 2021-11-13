@@ -54,7 +54,7 @@ class User:
     
     def setUsername(self, username):
         self.__username = username
-    
+
     def getProfilePic(self):
         return self.__profilePic
 
