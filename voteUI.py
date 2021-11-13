@@ -48,7 +48,7 @@ profile0 = ImageTk.PhotoImage(Image.open("images-0.jpg").resize((20,20), Image.A
 p0 = Label(root,image=profile0)
 p0.place(x=20,y=20)
 
-post0 = ImageTk.PhotoImage(Image.open("user_post.png").resize((165,165), Image.ANTIALIAS))
+post0 = ImageTk.PhotoImage(Image.open("user_post_0.png").resize((165,165), Image.ANTIALIAS))
 p0 = Label(root,image=post0)
 p0.place(x=10,y=50)
 
@@ -64,7 +64,7 @@ profile1 = ImageTk.PhotoImage(Image.open("images-1.jpg").resize((20,20), Image.A
 p1 = Label(root,image=profile1)
 p1.place(x=205,y=20)
 
-post1 = ImageTk.PhotoImage(Image.open("user_post.png").resize((165,165), Image.ANTIALIAS))
+post1 = ImageTk.PhotoImage(Image.open("user_post_0.png").resize((165,165), Image.ANTIALIAS))
 p1 = Label(root,image=post1)
 p1.place(x=195,y=50)
 
@@ -80,7 +80,7 @@ profile2 = ImageTk.PhotoImage(Image.open("images-2.jpg").resize((20,20), Image.A
 p2 = Label(root,image=profile2)
 p2.place(x=20,y=255)
 
-post2 = ImageTk.PhotoImage(Image.open("user_post.png").resize((165,165), Image.ANTIALIAS))
+post2 = ImageTk.PhotoImage(Image.open("user_post_0.png").resize((165,165), Image.ANTIALIAS))
 p2 = Label(root,image=post2)
 p2.place(x=10,y=285)
 
@@ -96,7 +96,7 @@ profile3 = ImageTk.PhotoImage(Image.open("images-3.jpg").resize((20,20), Image.A
 p3 = Label(root,image=profile3)
 p3.place(x=205,y=255)
 
-post3 = ImageTk.PhotoImage(Image.open("user_post.png").resize((165,165), Image.ANTIALIAS))
+post3 = ImageTk.PhotoImage(Image.open("user_post_0.png").resize((165,165), Image.ANTIALIAS))
 p3 = Label(root,image=post2)
 p3.place(x=195,y=285)
 
@@ -112,7 +112,7 @@ profile4 = ImageTk.PhotoImage(Image.open("images-4.jpg").resize((20,20), Image.A
 p4 = Label(root,image=profile4)
 p4.place(x=20,y=490)
 
-post4 = ImageTk.PhotoImage(Image.open("user_post.png").resize((165,165), Image.ANTIALIAS))
+post4 = ImageTk.PhotoImage(Image.open("user_post_0.png").resize((165,165), Image.ANTIALIAS))
 p4 = Label(root,image=post4)
 p4.place(x=10,y=520)
 
