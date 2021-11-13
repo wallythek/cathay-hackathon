@@ -1,5 +1,5 @@
 import numpy as np
-from datetime import datetime
+from datetime import datetime, timedelta
 from threading import Thread
 from time import sleep
 import sys
@@ -7,6 +7,7 @@ import random
 import pygame
 import tkinter as tk
 from PIL import ImageTk, Image
+import time
 
 def gacha(pie_png):
 
@@ -19,7 +20,7 @@ def gacha(pie_png):
 
 	window=tk.Tk()
 	window.title("e-voucher Gacha")
-	window.geometry("800x1200")
+	window.geometry("740x730")
 	window.resizable(0,0)
 	
 	# Create a photoimage object of the image in the path
@@ -30,13 +31,13 @@ def gacha(pie_png):
 	label1.image = test
 
 	# Position image
-	label1.place(x=0, y=0)
+	label1.place(x=-50, y=0)
 	
 	b1=tk.Button(window, text="Draw!", width=12, command=proceed)
-	b1.grid(sticky="E", row=8, column=3)
+	b1.grid(sticky="W", row=10, column=3)
 
 	b1=tk.Button(window, text="Cancel", width=12, command=cancel)
-	b1.grid(sticky="W", row=8, column=0)
+	b1.grid(sticky="E", row=10, column=0)
 
 	col_count, row_count = window.grid_size()
 
@@ -50,13 +51,18 @@ def gacha(pie_png):
 
 def gacha_spin(pie_png):
 	pygame.init()
+	start = int(time.time())
 	clock = pygame.time.Clock()
 	screen = pygame.display.set_mode([600,600])
 	pikachu = pygame.image.load(pie_png)
 	pikachu_rect = pikachu.get_rect(center= (300,300))
+	finger = pygame.image.load("finger.png")
+	finger = pygame.transform.scale(finger, (300, 600))
+	finger_rect = pikachu.get_rect(center= (850,700))
 	angle = 0
-	
-	while True:
+	r = int(np.random.uniform(20,30))
+	end = start + r
+	while int(time.time())<end:
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				pygame.quit()
@@ -66,8 +72,9 @@ def gacha_spin(pie_png):
 			pikachu = pygame.transform.rotozoom(pikachu,angle,1)
 			pikachu_rect = pikachu.get_rect(center = (300,300))
 			screen.blit(pikachu, pikachu_rect)
+			screen.blit(finger, finger_rect)
 			pygame.display.flip()
-			clock.tick(30)
+			clock.tick(10)
 	
 def random_item(x):
 #x is chosen category
