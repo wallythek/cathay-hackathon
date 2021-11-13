@@ -44,14 +44,13 @@ def UI():
 	global c
 	c = 500
 	def walk(label):
-		global c
 		c = 500
-    	def count():
-		global c
-		c +=1
-		label.config(text="+"+str(c))
-		label.after(random.randint(300,700),count)
-	count()
+		def count():
+			global c
+			c +=1
+			label.config(text="+"+str(c))
+			label.after(random.randint(300,700),count)
+		count()
 	rc = tk.Label(root,fg="black",font=("Arial",30),bg="white")
 	rc.place(x=240,y=390)
 	walk(rc)
@@ -89,6 +88,7 @@ def popup():
 		if(x == int(now[3:5])):
 			popstamp()
 			time.sleep(60)
+			
 			x = int(np.random.uniform(0,60))
 			
 t1 = Thread(target=UI)
