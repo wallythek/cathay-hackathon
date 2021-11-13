@@ -40,10 +40,10 @@ def gacha(pie_png):
 	col_count, row_count = window.grid_size()
 
 	for col in range(col_count):
-    	window.grid_columnconfigure(col, minsize=190)
+    		window.grid_columnconfigure(col, minsize=190)
 
 	for row in range(row_count):
-    	window.grid_rowconfigure(row, minsize=50)
+    		window.grid_rowconfigure(row, minsize=50)
 
 def gacha_spin(pie_png):
 	pygame.init()
