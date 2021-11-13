@@ -18,3 +18,6 @@ button1 = ttk.Button(text="Button Example")
 
 # pack() padding adds pixels outside the TButton. The widget’s position is changed.
 button1.grid(row=15,column=15)
+sa = ttk.Separator(root, orient='horizontal')
+sb = ttk.Separator(root, orient='horizontal')
+sa.place(x=0,y=290)
