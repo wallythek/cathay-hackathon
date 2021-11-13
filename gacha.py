@@ -9,6 +9,8 @@ import tkinter as tk
 from PIL import ImageTk, Image
 import time
 from tkinter import messagebox
+from tkinter.ttk import *
+
 
 def gacha(pie_png):
 
