@@ -88,21 +88,21 @@ def random_item():
 
 	randdict = {"Phone":["iPhone13", "Samsung Z Flip 3", "Nokia 3310"], "Stationery":["Pen", "Eraser", "Calculator"], "Watch":["G-Shock", "Rolex", "Seiko"], "Experience":["3-days staycation in HK", "Round Trip to Japan", "Buffet voucher"]}
 	
-	    def proceed():
+	def proceed():
 		window.destroy()
 		chooserand()
 
-	    def cancel():
+	def cancel():
 		window.destroy()
 
-	    def chooserand():
+	def chooserand():
 		def choose():
-		    x = e1.get()
-		    y = random.choice(randdict[x])
-		    window.destroy()
-		    master = tk.Tk()
-		    master.withdraw()
-		    messagebox.showinfo('Prize', f"You got {y}!")
+			    x = e1.get()
+			    y = random.choice(randdict[x])
+			    window.destroy()
+			    master = tk.Tk()
+			    master.withdraw()
+			    messagebox.showinfo('Prize', f"You got {y}!")
 
 
 		window=tk.Tk()
@@ -133,31 +133,31 @@ def random_item():
     
 		window.mainloop()
 
-	    window=tk.Tk()
-	    window.title("Random surprise")
-	    window.geometry("740x100")
-	    window.resizable(0,0)
+	window=tk.Tk()
+	window.title("Random surprise")
+	window.geometry("740x100")
+	window.resizable(0,0)
 	
-	    l1=Label(window, text="Asia Miles you now have:")
-	    l1.grid(sticky="W", row=0, column=1)
+	l1=Label(window, text="Asia Miles you now have:")
+	l1.grid(sticky="W", row=0, column=1)
 	
-	    l1=Label(window, text=", are you sure you want to draw?")
-	    l1.grid(sticky="W", row=0, column=2)
+	l1=Label(window, text=", are you sure you want to draw?")
+	l1.grid(sticky="W", row=0, column=2)
 	
-	    b1=tk.Button(window, text="Yes!", width=12, command=proceed)
-	    b1.grid(sticky="W", row=1, column=3)
+	b1=tk.Button(window, text="Yes!", width=12, command=proceed)
+	b1.grid(sticky="W", row=1, column=3)
 
-	    b1=tk.Button(window, text="Not really", width=12, command=cancel)
-	    b1.grid(sticky="E", row=1, column=0)
+	b1=tk.Button(window, text="Not really", width=12, command=cancel)
+	b1.grid(sticky="E", row=1, column=0)
 
-	    col_count, row_count = window.grid_size()
+	col_count, row_count = window.grid_size()
 
-	    for col in range(col_count):
-		    window.grid_columnconfigure(col, minsize=190)
+	for col in range(col_count):
+		window.grid_columnconfigure(col, minsize=190)
 
-	    for row in range(row_count):
-		    window.grid_rowconfigure(row, minsize=50)
-	    window.mainloop()
+	for row in range(row_count):
+		window.grid_rowconfigure(row, minsize=50)
+	window.mainloop()
 	
 def popup():
 	x = int(np.random.uniform(0,60))
