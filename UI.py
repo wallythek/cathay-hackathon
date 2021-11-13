@@ -90,8 +90,9 @@ def popup():
 			time.sleep(60)
 			
 			x = int(np.random.uniform(0,60))
-			
-t1 = Thread(target=UI)
-t2 = Thread(target=popup)
-t1.start() #Calls first function
-t2.start() #Calls second function to run at same time
+
+def run():
+	t1 = Thread(target=UI)
+	t2 = Thread(target=popup)
+	t1.start() #Calls first function
+	t2.start() #Calls second function to run at same time
