@@ -5,6 +5,7 @@ from tkinter import ttk
 import UI
 import gacha
 import randomitem
+import voteUI
 
 def cancel():
     window.destroy()
