@@ -6,7 +6,7 @@ import random
 import os
 
 root = Tk()
-root.geometry("800x800")
+root.geometry("405x640")
 
 img = ImageTk.PhotoImage(Image.open("walkingtrim.png"))
 panel = Label(root, image = img)
@@ -20,7 +20,7 @@ def walk(label):
         global c
         c +=1
         label.config(text=str(c))
-        label.after(100,count)
+        label.after(random.randint(100,700),count)
     count()
 rc = tk.Label(root,fg="dark green")
 rc.pack()
