@@ -5,15 +5,51 @@ from time import sleep
 import sys
 import random
 import pygame
+import tkinter as tk
+from PIL import ImageTk, Image
 
-def gacha():
+def proceed():
+	gacha_spin(pie_png)
+	window.destroy()
+
+def cancel():
+    window.destroy()
+
+def gacha(pie_png):
+	window=Tk()
+	window.title("e-voucher Gacha")
+	window.geometry("800x460")
+	window.resizable(0,0)
 	
+	# Create a photoimage object of the image in the path
+	image1 = Image.open(pie_png)
+	test = ImageTk.PhotoImage(image1)
 
-def gacha_spin():
+	label1 = tkinter.Label(image=test)
+	label1.image = test
+
+	# Position image
+	label1.place(x=400, y=200)
+	
+	b1=Button(window, text="Draw!", width=12, command= lambda: proceed(pie_png))
+	b1.grid(sticky="E", row=8, column=3)
+
+	b1=Button(window, text="Cancel", width=12, command=cancel)
+	b1.grid(sticky="W", row=8, column=0)
+
+	col_count, row_count = window.grid_size()
+
+	for col in range(col_count):
+    	window.grid_columnconfigure(col, minsize=190)
+
+	for row in range(row_count):
+    	window.grid_rowconfigure(row, minsize=50)
+
+def gacha_spin(pie_png):
 	pygame.init()
 	clock = pygame.time.Clock()
 	screen = pygame.display.set_mode([600,600])
-	pikachu = pygame.image.load("piechart.png")
+	pikachu = pygame.image.load(pie)
 	pikachu_rect = pikachu.get_rect(center= (300,300))
 	angle = 0
 	
