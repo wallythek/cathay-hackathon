@@ -30,10 +30,10 @@ l1.grid(sticky="W", row=0, column=3)
 b1=Button(window, text="Go", width=12, command=UI.run)
 b1.grid(sticky="E", row=1, column=0)
 
-b1=Button(window, text="Go", width=12, command=gacha)
+b1=Button(window, text="Go", width=12, command=gacha.gachaa)
 b1.grid(sticky="E", row=1, column=1)
 
-b1=Button(window, text="Go", width=12, command=randomitem)
+b1=Button(window, text="Go", width=12, command=randomitem.random_item)
 b1.grid(sticky="E", row=1, column=2)
 
 b1=Button(window, text="Go", width=12, command=community)
