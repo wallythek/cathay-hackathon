@@ -80,6 +80,7 @@ def gacha_spin(pie_png):
 	master = tk.Tk()
 	master.withdraw()
 	messagebox.showinfo('Prize', f"You got {prize}!")
+	pygame.display.quit()
 	
 def random_item(x):
 #x is chosen category
