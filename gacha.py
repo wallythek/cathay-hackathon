@@ -12,8 +12,8 @@ from tkinter import messagebox
 from tkinter.ttk import *
 
 
-def gacha(pie_png):
-
+def gacha():
+	pie_png = "pikachu.png"
 	def proceed():
 		window.destroy()
 		gacha_spin(pie_png)
