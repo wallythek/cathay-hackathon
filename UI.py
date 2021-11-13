@@ -44,7 +44,8 @@ def UI():
 	global c
 	c = 500
 	def walk(label):
-    	c = 500
+		global c
+		c = 500
     	def count():
 		global c
 		c +=1
@@ -77,6 +78,7 @@ def popup():
 		master.withdraw()
 		response = messagebox.showinfo('Stamp', "Click to collect stamp!")
 		if(response == "ok"):
+			global stampnum
 			stampnum += 1
 			master = tk.Tk()
 			master.withdraw()
@@ -87,7 +89,6 @@ def popup():
 		if(x == int(now[3:5])):
 			popstamp()
 			time.sleep(60)
-			
 			x = int(np.random.uniform(0,60))
 			
 t1 = Thread(target=UI)
