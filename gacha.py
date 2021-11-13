@@ -107,22 +107,31 @@ def random_item():
 
 		window=tk.Tk()
 		window.title("Rand surprise")
-		window.geometry("500x100")
+		window.geometry("500x300")
 		window.resizable(0,0)
+		image1 = Image.open("randombox.jpg")
+		image1 = image1.resize((300, 300), Image.ANTIALIAS) ## The (250, 250) is (height, width)
 
+		test = ImageTk.PhotoImage(image1)
+
+		label1 = tk.Label(image=test)
+		label1.image = test
+
+	# Position image
+		label1.place(x=100, y=0)
 		x = 0
 		clicked=tk.StringVar()
 		e1=tk.ttk.Combobox(window, width=12, textvariable=clicked)
 		e1['values']=list(randdict.keys())
-		e1.grid(row=0, column=1)
+		e1.grid(row=5, column=1)
 		e1.current(0)
 		e1.bind("<<ComboboxSelected>>",x)
 
 		b1=tk.Button(window, text="Draw", width=12, command=choose)
-		b1.grid(sticky="W", row=1, column=2)
+		b1.grid(sticky="W", row=5, column=2)
 
 		b1=tk.Button(window, text="Cancel", width=12, command=cancel)
-		b1.grid(sticky="E", row=1, column=0)
+		b1.grid(row=5, column=0)
 
 		col_count, row_count = window.grid_size()
 		for col in range(col_count):
@@ -138,14 +147,6 @@ def random_item():
 	window.geometry("740x100")
 	window.resizable(0,0)
 	
-	image1 = Image.open("randombox.jpg")
-	test = ImageTk.PhotoImage(image1)
-
-	label1 = tk.Label(image=test)
-	label1.image = test
-
-	# Position image
-	label1.place(x=-50, y=0)
 	
 	l1=Label(window, text="Asia Miles you now have:")
 	l1.grid(sticky="W", row=0, column=1)
@@ -167,4 +168,5 @@ def random_item():
 	for row in range(row_count):
 		window.grid_rowconfigure(row, minsize=50)
 	window.mainloop()
+	
 	
