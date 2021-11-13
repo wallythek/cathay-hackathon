@@ -62,6 +62,7 @@ def gacha_spin(pie_png):
 	angle = 0
 	r = int(np.random.uniform(20,30))
 	end = start + r
+	prize = "iMac"
 	while int(time.time())<end:
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
@@ -74,7 +75,10 @@ def gacha_spin(pie_png):
 			screen.blit(pikachu, pikachu_rect)
 			screen.blit(finger, finger_rect)
 			pygame.display.flip()
-			clock.tick(10)
+			clock.tick(1)
+	master = tk.Tk()
+	master.withdraw()
+	messagebox.showinfo('Prize', f"You got {prize}!")
 	
 def random_item(x):
 #x is chosen category
