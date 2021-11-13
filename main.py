@@ -2,6 +2,7 @@ import os
 import tkinter as tk
 from tkinter import *
 from tkinter import ttk
+import UI
 
 def cancel():
     window.destroy()
@@ -20,7 +21,7 @@ l1.grid(sticky="W", row=0, column=1)
 l1=Label(window, text="Community")
 l1.grid(sticky="W", row=0, column=2)
 
-b1=Button(window, text="Go", width=12, command=healthy)
+b1=Button(window, text="Go", width=12, command=UI.)
 b1.grid(sticky="E", row=1, column=0)
 
 b1=Button(window, text="Go", width=12, command=gacha)
