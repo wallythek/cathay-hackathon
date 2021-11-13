@@ -60,8 +60,8 @@ def gacha_spin(pie_png):
 	pikachu = pygame.image.load(pie_png)
 	pikachu_rect = pikachu.get_rect(center= (300,300))
 	finger = pygame.image.load("finger.png")
-	finger = pygame.transform.scale(finger, (300, 600))
-	finger_rect = pikachu.get_rect(center= (850,700))
+	finger = pygame.transform.scale(finger, (100, 400))
+	finger_rect = finger.get_rect(center= (300,700))
 	angle = 0
 	r = int(np.random.uniform(20,30))
 	end = start + r
