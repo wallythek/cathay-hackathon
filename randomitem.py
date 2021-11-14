@@ -12,10 +12,13 @@ from tkinter import messagebox
 from tkinter.ttk import *
 
 def random_item():
+	
+	asiamiles = 10000
 
 	randdict = {"Phone":["iPhone13", "Samsung Z Flip 3", "Nokia 3310"], "Stationery":["Pen", "Eraser", "Calculator"], "Watch":["G-Shock", "Rolex", "Seiko"], "Experience":["3-days staycation in HK", "Round Trip to Japan", "Buffet voucher"]}
 	
 	def proceed():
+		asiamiles -= 100
 		window.destroy()
 		chooserand()
 
@@ -29,7 +32,7 @@ def random_item():
 			    window.destroy()
 			    master = tk.Tk()
 			    master.withdraw()
-			    messagebox.showinfo('Prize', f"You got {y}!")
+			    messagebox.showinfo('Prize', f"You got {y}! You now have {asiamiles} asia miles left!")
 
 
 		window=tk.Tk()
@@ -75,13 +78,13 @@ def random_item():
 	window.resizable(0,0)
 	
 	
-	l1=Label(window, text="Asia Miles you now have:")
+	l1=Label(window, text=f"Asia Miles you now have:{asiamiles}")
 	l1.grid(sticky="W", row=0, column=1)
 	
 	l1=Label(window, text=", are you sure you want to draw?")
 	l1.grid(sticky="W", row=0, column=2)
 	
-	b1=tk.Button(window, text="Yes!", width=12, command=proceed)
+	b1=tk.Button(window, text="Yes!(Use 100 Asia miles)", width=12, command=proceed)
 	b1.grid(sticky="W", row=1, column=3)
 
 	b1=tk.Button(window, text="Not really", width=12, command=cancel)
