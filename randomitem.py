@@ -12,7 +12,6 @@ from tkinter import messagebox
 from tkinter.ttk import *
 
 def random_item():
-	
 	global asiamiles
 	asiamiles = 10000
 
@@ -36,7 +35,6 @@ def random_item():
 			master = tk.Tk()
 			master.withdraw()
 			messagebox.showinfo('Prize', f"You got {y}! You now have {asiamiles} asia miles left!")
-
 
 		window=tk.Tk()
 		window.title("Rand surprise")
@@ -79,7 +77,6 @@ def random_item():
 	window.title("Random surprise")
 	window.geometry("740x100")
 	window.resizable(0,0)
-	
 	
 	l1=Label(window, text=f"Asia Miles you now have:     {asiamiles}")
 	l1.grid(sticky="W", row=0, column=1)
