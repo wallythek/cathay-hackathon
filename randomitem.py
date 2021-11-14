@@ -36,7 +36,7 @@ def random_item():
 			master.withdraw()
 			messagebox.showinfo('Prize', f"You got {y}! You now have {asiamiles} asia miles left!")
 
-		window=tk.Tk()
+		window = tk.Tk()
 		window.title("Rand surprise")
 		window.geometry("500x300")
 		window.resizable(0,0)
