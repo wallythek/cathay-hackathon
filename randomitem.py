@@ -81,7 +81,7 @@ def random_item():
 	window.resizable(0,0)
 	
 	
-	l1=Label(window, text=f"Asia Miles you now have:          {asiamiles}")
+	l1=Label(window, text=f"Asia Miles you now have:     {asiamiles}")
 	l1.grid(sticky="W", row=0, column=1)
 	
 	l1=Label(window, text=", are you sure you want to draw?")
