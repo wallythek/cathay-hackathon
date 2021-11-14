@@ -63,7 +63,7 @@ def gacha_spin(pie_png):
 	finger = pygame.transform.scale(finger, (100, 400))
 	finger_rect = finger.get_rect(center= (300,700))
 	angle = 0
-	r = int(np.random.uniform(20,30))
+	r = int(np.random.uniform(3,5))
 	end = start + r
 	prize = "Apple voucher"
 	while int(time.time())<end:
