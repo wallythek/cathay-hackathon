@@ -13,11 +13,13 @@ from tkinter.ttk import *
 
 def random_item():
 	
+	global asiamiles
 	asiamiles = 10000
 
 	randdict = {"Phone":["iPhone13", "Samsung Z Flip 3", "Nokia 3310"], "Stationery":["Pen", "Eraser", "Calculator"], "Watch":["G-Shock", "Rolex", "Seiko"], "Experience":["3-days staycation in HK", "Round Trip to Japan", "Buffet voucher"]}
 	
 	def proceed():
+		global asiamiles
 		asiamiles -= 100
 		window.destroy()
 		chooserand()
@@ -27,12 +29,13 @@ def random_item():
 
 	def chooserand():
 		def choose():
-			    x = e1.get()
-			    y = random.choice(randdict[x])
-			    window.destroy()
-			    master = tk.Tk()
-			    master.withdraw()
-			    messagebox.showinfo('Prize', f"You got {y}! You now have {asiamiles} asia miles left!")
+			global asiamiles
+			x = e1.get()
+			y = random.choice(randdict[x])
+			window.destroy()
+			master = tk.Tk()
+			master.withdraw()
+			messagebox.showinfo('Prize', f"You got {y}! You now have {asiamiles} asia miles left!")
 
 
 		window=tk.Tk()
@@ -57,7 +60,7 @@ def random_item():
 		e1.current(0)
 		e1.bind("<<ComboboxSelected>>",x)
 
-		b1=tk.Button(window, text="Draw", width=12, command=choose)
+		b1=tk.Button(window, text="Use 100 miles", width=12, command=choose)
 		b1.grid(sticky="W", row=5, column=2)
 
 		b1=tk.Button(window, text="Cancel", width=12, command=cancel)
@@ -78,13 +81,13 @@ def random_item():
 	window.resizable(0,0)
 	
 	
-	l1=Label(window, text=f"Asia Miles you now have:{asiamiles}")
+	l1=Label(window, text=f"Asia Miles you now have:          {asiamiles}")
 	l1.grid(sticky="W", row=0, column=1)
 	
 	l1=Label(window, text=", are you sure you want to draw?")
 	l1.grid(sticky="W", row=0, column=2)
 	
-	b1=tk.Button(window, text="Yes!(Use 100 Asia miles)", width=12, command=proceed)
+	b1=tk.Button(window, text="Yes!", width=12, command=proceed)
 	b1.grid(sticky="W", row=1, column=3)
 
 	b1=tk.Button(window, text="Not really", width=12, command=cancel)
