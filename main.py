@@ -8,7 +8,7 @@ import randomitem
 import voteUI
 
 def cancel():
-	window.destroy()
+	root.destroy()
 def healthy():
 	cancel()
 	UI.run()
@@ -20,7 +20,7 @@ def randi():
 	randomitem.random_item()
 def community():
 	cancel()
-	voteUI.()
+	voteUI.vote()
 	
 root=Tk()
 root.title("Portal")

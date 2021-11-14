@@ -96,3 +96,4 @@ def run():
 	t2 = Thread(target=popup)
 	t1.start() #Calls first function
 	t2.start() #Calls second function to run at same time
+
