@@ -94,7 +94,8 @@ def vote():
             countLabels.append(Label(root,text=users[2*i+j].getPost().getVoteCount(),bg="white"))
             countLabels[-1].config(font=("Arial",12))
             countLabels[-1].place(x=55+185*j,y=220+235*i-yu+1)
-
+    
+    # back up line if there are odd number of users
     if (len(users) % 2 != 0):
         i = len(users) // 2
     
