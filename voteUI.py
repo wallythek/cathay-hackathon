@@ -11,7 +11,7 @@ import os
 # assume 5 users in the prototype, and the current user is users[0]
 def vote():
     users = []
-    for i in range(5):
+    for i in range(6):
         username = "".join(random.choices(string.ascii_lowercase + string.digits,
                 k = random.randint(6, 10))) + str(i)
         profilePic = Image.open("images-" + str(i) + ".jpg")
