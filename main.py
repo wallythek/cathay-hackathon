@@ -24,8 +24,7 @@ def community():
 	
 root=Tk()
 root.title("Portal")
-root.geometry("800x460")
-root.resizable(0,0)
+root.geometry("800x160")
 
 l1=Label(root, text="Healthy Lifestyle")
 l1.grid(row=0, column=0)
