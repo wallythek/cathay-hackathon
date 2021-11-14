@@ -78,7 +78,7 @@ def gacha_spin(pie_png):
 			screen.blit(pikachu, pikachu_rect)
 			screen.blit(finger, finger_rect)
 			pygame.display.flip()
-			clock.tick(1)
+			clock.tick(100)
 	master = tk.Tk()
 	master.withdraw()
 	messagebox.showinfo('Prize', f"You got {prize}!")
