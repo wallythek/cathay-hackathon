@@ -128,4 +128,3 @@ def vote():
 
     tk.mainloop()
 
-vote()
