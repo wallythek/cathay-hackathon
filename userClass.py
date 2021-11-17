@@ -46,9 +46,12 @@ class User:
         self.__profilePic = profilePic
         self.__descr = descr
         self.__password = password
-        self.__miles = 0
+        self.__miles = 2021
         self.__post = None
 
+    def getAccId(self):
+        return self.__accId
+    
     def getUsername(self):
         return self.__username
     
