@@ -70,7 +70,6 @@ def gacha_spin(pie_png):
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				pygame.quit()
-				sys.exit()
 			angle += 1
 			screen.fill((255,255,255))
 			pikachu = pygame.transform.rotozoom(pikachu,angle,1)
