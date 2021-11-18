@@ -49,24 +49,24 @@ def random_item():
 		label1.image = test
 
 	# Position image
-		label1.place(x=100, y=0)
+		label1.place(x=45, y=150)
 		x = 0
 		clicked=tk.StringVar()
 		e1=tk.ttk.Combobox(window, width=12, textvariable=clicked)
 		e1['values']=list(randdict.keys())
-		e1.grid(row=5, column=1)
+		e1.grid(sticky = "E", row=9, column=1)
 		e1.current(0)
 		e1.bind("<<ComboboxSelected>>",x)
 
 		b1=tk.Button(window, text="Use 100 miles", width=12, command=choose)
-		b1.grid(sticky="W", row=5, column=2)
+		b1.grid(row=10, column=2)
 
 		b1=tk.Button(window, text="Cancel", width=12, command=cancel)
-		b1.grid(row=5, column=0)
+		b1.grid(row=10, column=0)
 
 		col_count, row_count = window.grid_size()
 		for col in range(col_count):
-		    window.grid_columnconfigure(col, minsize=190)
+		    window.grid_columnconfigure(col, minsize=126)
 
 		for row in range(row_count):
 		    window.grid_rowconfigure(row, minsize=50)
