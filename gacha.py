@@ -99,7 +99,6 @@ def gacha_spin(pie_png):
 			Font=pygame.font.SysFont('arial', 12)
 #back to home screen
 			if event.type == pygame.QUIT:
-				print("1")
 				pygame.quit()
 				sys.exit()
 			#checks if a mouse is clicked
@@ -107,7 +106,7 @@ def gacha_spin(pie_png):
             #if the mouse is clicked on the
             # button the game is terminated
 				if (mouse[0]>=50 and mouse[0] <= 126) and (mouse[1]>=560 and mouse[1] <= 600):
-					pygame.display.quit()
+					return(0)
 				elif (mouse[0]>=254 and mouse[0] <= 330) and (mouse[1]>=560 and mouse[1] <= 600):
 					gacha_spin(pie_png)
 #back button color
