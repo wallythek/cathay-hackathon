@@ -23,7 +23,7 @@ def gachaa():
 
 	window=tk.Tk()
 	window.title("e-voucher Gacha")
-	window.geometry("740x730")
+	window.geometry("380x640")
 	window.resizable(0,0)
 	
 	# Create a photoimage object of the image in the path
