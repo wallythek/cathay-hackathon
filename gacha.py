@@ -63,9 +63,9 @@ def gacha_spin(pie_png):
 	finger = pygame.transform.scale(finger, (300, 100))
 	finger_rect = finger.get_rect(center= (-100,320))
 	angle = 0
-	r = int(np.random.uniform(3,5))
+	r = int(np.random.uniform(3,10))
+	x = 0
 	end = start + r
-	prize = "Apple voucher"
 	while int(time.time())<end:
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
@@ -79,6 +79,13 @@ def gacha_spin(pie_png):
 			screen.blit(finger, finger_rect)
 			pygame.display.flip()
 			clock.tick(100)
+			x+=1
+	if (x == 18 or x == 19 or x == 20):
+		prize="red"
+	elif (x == 21 or x == 22):
+		prize="yellow"
+	elif (x == 23):
+		prize="orange"
 	master = tk.Tk()
 	master.withdraw()
 	messagebox.showinfo('Prize', f"You got {prize}!")
