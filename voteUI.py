@@ -18,7 +18,6 @@ def vote(users):
         if (user.getAccId() == 0):
             own = i
             break
-    
     root = Tk()
     root.title("Community")
     root.geometry("380x640")
@@ -52,34 +51,34 @@ def vote(users):
             roundies.append(Label(root,image=tempimage))
             roundies[-1].place(x=20+185*j-gx, y=40+235*i)
 
-            likey.append(Label(root,image=globallike,bg="white"))
+            likey.append(Label(root,image=globallike,bg="#c6e5dc"))
             likey[-1].place(x=55+185*j-25,y=240+235*i+1)
             
-            dislikey.append(Label(root,image=globaldislike,bg="white"))
+            dislikey.append(Label(root,image=globaldislike,bg="#c6e5dc"))
             dislikey[-1].place(x=55+185*j+17,y=240+235*i+1)
             
-            sharelist.append(Label(root,image=gshare,bg="white"))
+            sharelist.append(Label(root,image=gshare,bg="#c6e5dc"))
             sharelist[-1].place(x=55+185*j+100,y=240+235*i+1)
             
-            clist.append(Label(root,image=comment,bg="white"))
+            clist.append(Label(root,image=comment,bg="#c6e5dc"))
             clist[-1].place(x=55+185*j+65,y=240+235*i+1)
 
 
 
-            usernameLabels.append(Label(root, text=users[2*i+j].getUsername(), bg="white"))
-            usernameLabels[-1].config(font=("Arial", 15))
+            usernameLabels.append(Label(root, text=users[2*i+j].getUsername(), bg="#c6e5dc"))
+            usernameLabels[-1].config(font=("Calibri", 15))
             usernameLabels[-1].place(x=55+185*j, y=42+235*i)
 
             profileImages.append(ImageTk.PhotoImage(users[2*i+j].getProfilePic().resize((20,20), Image.ANTIALIAS)))
-            profileLabels.append(Label(root,image=profileImages[-1],bg="white"))
+            profileLabels.append(Label(root,image=profileImages[-1],bg="#c6e5dc"))
             profileLabels[-1].place(x=20+185*j, y=40+235*i)
 
             postImages.append(ImageTk.PhotoImage(users[2*i+j].getPost().getImage().resize((165,165), Image.ANTIALIAS)))
             postLabels.append(Label(root, image=postImages[-1]))
             postLabels[-1].place(x=10+185*j, y=70+235*i)
 
-            countLabels.append(Label(root,text=users[2*i+j].getPost().getVoteCount(),bg="white"))
-            countLabels[-1].config(font=("Arial",12))
+            countLabels.append(Label(root,text=users[2*i+j].getPost().getVoteCount(),bg="#c6e5dc"))
+            countLabels[-1].config(font=("Calibri",12))
             countLabels[-1].place(x=55+185*j,y=240+235*i+1)
     
     # back up line if there are odd number of users
@@ -90,15 +89,15 @@ def vote(users):
         roundies[-1].place(x=20-gx, y=40+235*i)
         likey.append(Label(root,image=globallike))
         likey[-1].place(x=30,y=240+235*i+1)
-        dislikey.append(Label(root,image=globaldislike,bg="white"))
+        dislikey.append(Label(root,image=globaldislike,bg="#c6e5dc"))
         dislikey[-1].place(x=72,y=240+235*i+1)
-        sharelist.append(Label(root,image=gshare,bg="white"))
+        sharelist.append(Label(root,image=gshare,bg="#c6e5dc"))
         sharelist[-1].place(x=155,y=240+235*i+1)
-        clist.append(Label(root,image=comment,bg="white"))
+        clist.append(Label(root,image=comment,bg="#c6e5dc"))
         clist[-1].place(x=120,y=240+235*i+1)
 
-        usernameLabels.append(Label(root, text=users[-1].getUsername(), bg="white"))
-        usernameLabels[-1].config(font=("Arial", 15))
+        usernameLabels.append(Label(root, text=users[-1].getUsername(), bg="#c6e5dc"))
+        usernameLabels[-1].config(font=("Calibri", 15))
         usernameLabels[-1].place(x=55, y=42+235*i)
 
         profileImages.append(ImageTk.PhotoImage(users[-1].getProfilePic().resize((20,20), Image.ANTIALIAS)))
@@ -109,16 +108,16 @@ def vote(users):
         postLabels.append(Label(root, image=postImages[-1]))
         postLabels[-1].place(x=10, y=70+235*i)
 
-        countLabels.append(Label(root,text=users[-1].getPost().getVoteCount(),bg="white"))
-        countLabels[-1].config(font=("Arial",12))
+        countLabels.append(Label(root,text=users[-1].getPost().getVoteCount(),bg="#c6e5dc"))
+        countLabels[-1].config(font=("Calibri",12))
         countLabels[-1].place(x=55,y=240+235*i+1)
 
-        likeButtons.append(Button(root, text="....",
+        likeButtons.append(Button(root, image=globallike,
                             command=lambda:[users[own].votePost(users[-1].getPost()),
                             countLabels[-1].config(text=users[-1].getPost().getVoteCount())]))
         likeButtons[-1].place(x=55-25,y=240+235*i+1)
 
-        dislikeButtons.append(Button(root, text="....",
+        dislikeButtons.append(Button(root, image=globaldislike,
                             command=lambda:[users[own].unvotePost(users[-1].getPost()),
                             countLabels[-1].config(text=users[-1].getPost().getVoteCount())]))
         dislikeButtons[-1].place(x=55+17,y=240+235*i+1)
@@ -174,4 +173,3 @@ def vote(users):
     dislikeButtons[-1].place(x=55+185+17,y=240+235*2+1)
     
     tk.mainloop()
-
