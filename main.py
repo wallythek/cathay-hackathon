@@ -36,7 +36,7 @@ for _ in range(3):
         users[random.randint(0, 4)].votePost(users[random.randint(0, 4)].getPost())
         users[random.randint(0, 4)].unvotePost(users[random.randint(0, 4)].getPost())
 
-def login(users):
+def login_(users):
     def takeInput(users, login):
         username = usernameInput.get("1.0", "end-1c")
         password = passwordInput.get("1.0", "end-1c")
@@ -44,7 +44,7 @@ def login(users):
         if (username in usernames and password == users[usernames.index(username)].getPassword()):
             login.destroy()
             main(users)
-            login(users)
+            login_(users)
         else:
             wrong = Label(text="Wrong username or password!", bg="#c6e5dc", fg="red")
             wrong.place(x=75, y=520)
@@ -93,7 +93,10 @@ def login(users):
         root=Tk()
         root.title("Portal")
         root.geometry("380x640")
-        root.configure(bg="#c6e5dc")
+
+        bg = ImageTk.PhotoImage(Image.open("login.jpg").resize((400,652), Image.ANTIALIAS))
+        background = Label(root,image=bg,bg="white")
+        background.place(x=-10,y=-10)
         
         b1=Button(root, text="Healthy Lifestyle", width=15, height=2, fg="white", command=healthy, bg="#046464")
         b1.grid(row=2, column=1)
@@ -119,4 +122,6 @@ def login(users):
                 root.grid_rowconfigure(row, minsize=90)
         root.mainloop()
 
-login(users)
+    login.mainloop()
+
+login_(users)
