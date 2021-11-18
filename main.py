@@ -56,7 +56,7 @@ def login_(users):
     login.resizable(0,0)
     login.config(bg="#c6e5dc")
 
-    bg_ = ImageTk.PhotoImage(Image.open("login_page.jpg").resize((400,400), Image.ANTIALIAS))
+    bg_ = ImageTk.PhotoImage(Image.open("login_page.png").resize((400,400), Image.ANTIALIAS))
     background_ = Label(login,image=bg_,bg="#c6e5dc")
     background_.place(x=-10,y=-30)
 
