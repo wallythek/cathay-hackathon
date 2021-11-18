@@ -38,7 +38,7 @@ def random_item():
 
 		window = tk.Tk()
 		window.title("Rand surprise")
-		window.geometry("500x300")
+		window.geometry("380x640")
 		window.resizable(0,0)
 		image1 = Image.open("randombox.png")
 		image1 = image1.resize((300, 300), Image.ANTIALIAS) ## The (250, 250) is (height, width)
@@ -75,20 +75,20 @@ def random_item():
 
 	window=tk.Tk()
 	window.title("Random surprise")
-	window.geometry("740x100")
+	window.geometry("380x640")
 	window.resizable(0,0)
 	
 	l1=Label(window, text=f"Asia Miles you now have:     {asiamiles}")
-	l1.grid(sticky="W", row=0, column=1)
+	l1.grid(sticky="E", row=5, column=0)
 	
 	l1=Label(window, text=", are you sure you want to draw?")
-	l1.grid(sticky="W", row=0, column=2)
+	l1.grid(sticky="W", row=5, column=1)
 	
 	b1=tk.Button(window, text="Yes!", width=12, command=proceed)
-	b1.grid(sticky="W", row=1, column=3)
+	b1.grid(row=10, column=1)
 
 	b1=tk.Button(window, text="Not really", width=12, command=cancel)
-	b1.grid(sticky="E", row=1, column=0)
+	b1.grid(row=10, column=0)
 
 	col_count, row_count = window.grid_size()
 
