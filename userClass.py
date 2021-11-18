@@ -85,8 +85,9 @@ class User:
     def payMiles(self, miles):
         if (self.__miles - miles >= 0):
             self.__miles -= miles
+            return True
         else:
-            print("Not enough miles!")
+            return False
 
     def getPost(self):
         return self.__post
