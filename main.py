@@ -12,7 +12,7 @@ import gacha
 import randomitem
 import voteUI
 
-users = [User(0, "me", Image.open("images-0.jpg"), "Me", "69420nice")]
+users = [User(0, "me", Image.open("images-0.jpg"), "Me", "password")]
 for i in range(1, 6):
     username = "".join(random.choices(string.ascii_lowercase + string.digits,
             k = random.randint(6, 10)))
