@@ -50,7 +50,7 @@ def random_item(users):
             b1.destroy()
             b2.destroy()
             
-            b3=tk.Button(window, text="Return to Home Page", width=20, height=2, fg="white", bg="#046464", command=window.destroy)
+            b3=tk.Button(window, text="Return to Home Page", width=20, height=2, fg="black", bg="#046464", command=window.destroy)
             b3.place(x=100,y=520)
             
 
@@ -108,10 +108,10 @@ def random_item(users):
     l1=tk.Label(window, text="are you sure you want to draw?", bg="#c6e5dc", font=("Calibri", 18))
     l1.place(x=30,y=450)
 	
-    b1=tk.Button(window, text="Yes!", width=12, height=2, fg="white", bg="#046464", command=lambda:proceed(users, window))
+    b1=tk.Button(window, text="Yes!", width=12, height=2, fg="black", bg="#046464", command=lambda:proceed(users, window))
     b1.grid(row=11, column=1)
 
-    b1=tk.Button(window, text="Not really", width=12, height=2, fg="white", bg="#046464", command=cancel)
+    b1=tk.Button(window, text="Not really", width=12, height=2, fg="black", bg="#046464", command=cancel)
     b1.grid(row=11, column=0)
 
     col_count, row_count = window.grid_size()
