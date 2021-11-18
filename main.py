@@ -47,7 +47,7 @@ def login_(users):
             login_(users)
         else:
             wrong = Label(text="Wrong username or password!", bg="#c6e5dc", fg="red")
-            wrong.place(x=75, y=520)
+            wrong.place(x=86, y=520)
             
         
     login=Tk()
@@ -67,7 +67,7 @@ def login_(users):
     passwordInput.place(x=90, y=460)
 
     enter = Button(login, text="Enter", bg="#046464", fg="white", width=6, height=2, command=lambda:takeInput(users, login))
-    enter.place(x=145, y=560)
+    enter.place(x=151, y=560)
         
     def main(users):
         def cancel():
