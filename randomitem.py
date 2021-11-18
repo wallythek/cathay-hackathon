@@ -40,7 +40,7 @@ def random_item():
 		window.title("Rand surprise")
 		window.geometry("500x300")
 		window.resizable(0,0)
-		image1 = Image.open("randombox.jpg")
+		image1 = Image.open("randombox.png")
 		image1 = image1.resize((300, 300), Image.ANTIALIAS) ## The (250, 250) is (height, width)
 
 		test = ImageTk.PhotoImage(image1)
