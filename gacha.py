@@ -13,7 +13,7 @@ from tkinter.ttk import *
 
 
 def gachaa():
-	pie_png = "pikachu.png"
+	pie_png = "newpikachu.png"
 	def proceed():
 		window.destroy()
 		gacha_spin(pie_png)
@@ -27,7 +27,7 @@ def gachaa():
 	window.resizable(0,0)
 	
 	# Create a photoimage object of the image in the path
-	image1 = Image.open(pie_png)
+	image1 = Image.open("pikachu.png")
 	test = ImageTk.PhotoImage(image1)
 
 	label1 = tk.Label(image=test)
@@ -80,13 +80,13 @@ def gacha_spin(pie_png):
 			clock.tick(100)
 			x+=1
 	if (x == 2 or x == 18 or x == 19 or x == 20):
-		prize="red"
+		prize="Apple Store $100 e-voucher"
 	elif (x == 21 or x == 22):
-		prize="yellow"
+		prize="Adidas $200 e-voucher"
 	elif (x == 23 or x == 16):
-		prize="orange"
+		prize="ParknShop $50 e-voucher"
 	elif(x == 10):
-		prize="green"
+		prize="Kowloon Shangri-La 1-night-staycation voucher"
 	else:
 		prize="an error"
 		print(x)
