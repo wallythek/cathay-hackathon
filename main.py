@@ -64,19 +64,19 @@ def main(users):
 
     
     
-    b1=Button(root, text="Healthy Lifestyle", width=15, height=2, command=healthy, bg="#046464")
+    b1=Button(root, text="Healthy Lifestyle", width=15, height=2, command=healthy, bg="#046464", fg="white")
     b1.grid(row=2, column=1)
 
-    b1=Button(root, text="Gacha", width=15, height=2, command=gaacha, bg="#046464")
+    b1=Button(root, text="Gacha", width=15, height=2, command=gaacha, bg="#046464", fg="white")
     b1.grid(row=3, column=1)
 
-    b1=Button(root, text="Random Box", width=15, height=2, command=randi, bg="#046464")
+    b1=Button(root, text="Random Box", width=15, height=2, command=randi, bg="#046464", fg="white")
     b1.grid(row=4, column=1)
 
-    b1=Button(root, text="Community", width=15, height=2, command=community, bg="#046464")
+    b1=Button(root, text="Community", width=15, height=2, command=community, bg="#046464", fg="white")
     b1.grid(row=5, column=1)
 
-    b1=Button(root, text="Close Window", width=10, command=cancel, bg="#046464")
+    b1=Button(root, text="Close Window", width=10, command=cancel, bg="#046464", fg="white")
     b1.grid(sticky="E", row=6, column=2)
 
     col_count, row_count = root.grid_size()
