@@ -43,9 +43,9 @@ def random_item(users):
         def choose(users, b1, b2):
             x = e1.get()
             y = random.choice(randdict[x])
-            congrats1 = tk.Label(window, text=f"You got {y}!", bg="#c6e5dc", fg="green", font=("Calibri", 18))
+            congrats1 = tk.Label(window, text=f"You got {y}!", bg="#c6e5dc", fg="green", font=("Calibri", 16))
             congrats1.place(x=30,y=50)
-            congrats2 = tk.Label(window, text=f"You now have {users[own].getMiles()} Asia Miles left!", bg="#c6e5dc", fg="green", font=("Calibri", 18))
+            congrats2 = tk.Label(window, text=f"You now have {users[own].getMiles()} Asia Miles left!", bg="#c6e5dc", fg="green", font=("Calibri", 16))
             congrats2.place(x=30,y=90)
             b1.destroy()
             b2.destroy()
@@ -102,10 +102,10 @@ def random_item(users):
     background_ = tk.Label(window,image=bg_,bg="#c6e5dc")
     background_.place(x=-10,y=-30)
     
-    l1=tk.Label(window, text="You now have " + str(users[own].getMiles()) + " Asia Miles,", bg="#c6e5dc", font=("Calibri", 20))
+    l1=tk.Label(window, text="You now have " + str(users[own].getMiles()) + " Asia Miles,", bg="#c6e5dc", font=("Calibri", 18))
     l1.place(x=30,y=400)
 	
-    l1=tk.Label(window, text="are you sure you want to draw?", bg="#c6e5dc", font=("Calibri", 20))
+    l1=tk.Label(window, text="are you sure you want to draw?", bg="#c6e5dc", font=("Calibri", 18))
     l1.place(x=30,y=450)
 	
     b1=tk.Button(window, text="Yes!", width=12, height=2, fg="white", bg="#046464", command=lambda:proceed(users, window))
