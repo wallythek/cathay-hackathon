@@ -84,9 +84,9 @@ def login_(users):
                 cancel()
                 gacha.gachaa()
                 main(users)
-        def randi():
+        def randi(users_ = users):
                 cancel()
-                randomitem.random_item()
+                randomitem.random_item(users_)
                 main(users)
         def community(users_ = users):
                 cancel()
