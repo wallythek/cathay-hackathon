@@ -56,6 +56,10 @@ def login_(users):
     login.resizable(0,0)
     login.config(bg="#c6e5dc")
 
+    bg_ = ImageTk.PhotoImage(Image.open("login_page.jpg").resize((400,400), Image.ANTIALIAS))
+    background_ = Label(login,image=bg_,bg="#c6e5dc")
+    background_.place(x=-10,y=-30)
+
     username = Label(text="Username", bg="#c6e5dc")
     username.place(x=100, y=390)
     usernameInput = Text(login, height=1, width=20, font="Calibri")
@@ -66,7 +70,7 @@ def login_(users):
     passwordInput = Text(login, height=1, width=20, font="Calibri")
     passwordInput.place(x=90, y=500)
 
-    enter = Button(login, text="Enter", bg="#046464", fg="black", width=9, height=2, command=lambda:takeInput(users, login))
+    enter = Button(login, text="Enter", bg="#046464", fg="white", width=9, height=2, command=lambda:takeInput(users, login))
     enter.place(x=139, y=560)
         
     def main(users):
