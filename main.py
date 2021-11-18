@@ -57,17 +57,17 @@ def login_(users):
     login.config(bg="#c6e5dc")
 
     username = Label(text="Username", bg="#c6e5dc")
-    username.place(x=100, y=330)
+    username.place(x=100, y=390)
     usernameInput = Text(login, height=1, width=20, font="Calibri")
-    usernameInput.place(x=90, y=360)
+    usernameInput.place(x=90, y=420)
 
     password = Label(text="Password", bg="#c6e5dc")
-    password.place(x=100, y=430)
+    password.place(x=100, y=470)
     passwordInput = Text(login, height=1, width=20, font="Calibri")
-    passwordInput.place(x=90, y=460)
+    passwordInput.place(x=90, y=500)
 
-    enter = Button(login, text="Enter", bg="#046464", fg="white", width=6, height=2, command=lambda:takeInput(users, login))
-    enter.place(x=151, y=560)
+    enter = Button(login, text="Enter", bg="#046464", fg="black", width=9, height=2, command=lambda:takeInput(users, login))
+    enter.place(x=139, y=560)
         
     def main(users):
         def cancel():
