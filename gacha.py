@@ -37,10 +37,10 @@ def gachaa():
 	label1.place(x=-100, y=80)
 	
 	b1=tk.Button(window, text="Draw!", width=12, command=proceed)
-	b1.grid(sticky="E", row=10, column=1)
+	b1.grid(row=10, column=1)
 
 	b1=tk.Button(window, text="Cancel", width=12, command=cancel)
-	b1.grid(sticky="W", row=10, column=0)
+	b1.grid(row=10, column=0)
 
 	col_count, row_count = window.grid_size()
 
@@ -63,7 +63,7 @@ def gacha_spin(pie_png):
 	finger = pygame.transform.scale(finger, (300, 100))
 	finger_rect = finger.get_rect(center= (-100,320))
 	angle = 0
-	r = int(np.random.uniform(3,10))
+	r = int(np.random.uniform(3,7))
 	x = 0
 	end = start + r
 	while int(time.time())<end:
@@ -80,19 +80,24 @@ def gacha_spin(pie_png):
 			pygame.display.flip()
 			clock.tick(100)
 			x+=1
-
-	if (x == 18 or x == 19 or x == 20):
+	if (x == 2 or x == 18 or x == 19 or x == 20):
 		prize="red"
 	elif (x == 21 or x == 22):
 		prize="yellow"
-	elif (x == 23):
+	elif (x == 23 or x == 16):
 		prize="orange"
+	elif(x == 10):
+		prize="green"
+	else:
+		prize="an error"
+		print(x)
 	master = tk.Tk()
 	master.withdraw()
 	messagebox.showinfo('Prize', f"You got {prize}!")
 	while True:
 		for event in pygame.event.get():
 			mouse = pygame.mouse.get_pos()
+			Font=pygame.font.SysFont('arial', 12)
 #back to home screen
 			if event.type == pygame.QUIT:
 				pygame.quit()
@@ -101,11 +106,28 @@ def gacha_spin(pie_png):
 			if event.type == pygame.MOUSEBUTTONDOWN:
             #if the mouse is clicked on the
             # button the game is terminated
-				if 50 <= mouse[0] <= 126 and 560 <= mouse[1] <= 600:
+				if (mouse[0]>=50 and mouse[0] <= 126) and (mouse[1]>=560 and mouse[1] <= 600):
 					pygame.quit()
+				elif (mouse[0]>=254 and mouse[0] <= 330) and (mouse[1]>=560 and mouse[1] <= 600):
+					gacha_spin(pie_png)
 #back button color
-			if (50 <= mouse[0] or mouse[0] <= 126) and (560 <= mouse[1] or mouse[1] <= 600):
-				pygame.draw.rect(screen,(100,100,100),(50,560,76,40))
+			if (mouse[0]>=50 and mouse[0] <= 126) and (mouse[1]>=560 and mouse[1] <= 600):
+				pygame.draw.rect(screen,(56,126,121),(50,560,76,40))
+				home=Font.render("Home", False, (255,255,255), None)
+				newgame=Font.render("Again", False, (255,255,255), None)
+				screen.blit(home, (75, 570))
+				screen.blit(newgame, (278, 570))
+			elif(mouse[0]>=254 and mouse[0] <= 330) and (mouse[1]>=560 and mouse[1] <= 600):
+				pygame.draw.rect(screen,(56,126,121),(254,560,76,40))
+				home=Font.render("Home", False, (255,255,255), None)
+				newgame=Font.render("Again", False, (255,255,255), None)
+				screen.blit(home, (75, 570))
+				screen.blit(newgame, (278, 570))
 			else:
-				pygame.draw.rect(screen,(170,170,170),(50,560,76,40))
-			print(mouse)
+				pygame.draw.rect(screen,(0,93,99),(50,560,76,40))
+				pygame.draw.rect(screen,(0,93,99),(254,560,76,40))
+				home=Font.render("Home", False, (255,255,255), None)
+				newgame=Font.render("Again", False, (255,255,255), None)
+				screen.blit(home, (75, 570))
+				screen.blit(newgame, (278, 570))
+			pygame.display.flip()
