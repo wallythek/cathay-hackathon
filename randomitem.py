@@ -21,7 +21,7 @@ def random_item(users):
             own = i
             break
 
-    randdict = {"Phone":["iPhone13", "Samsung Z Flip 3", "Nokia 3310"], "Stationery":["Pen", "Eraser", "Calculator"], "Watch":["G-Shock", "Rolex", "Seiko"], "Experience":["3-days staycation in HK", "Round Trip to Japan", "Buffet voucher"]}
+    randdict = {"Phone":["iPhone13", "Samsung Z Flip 3", "Nokia 3310"], "Stationery":["Pen", "Eraser", "Calculator"], "Watch":["G-Shock", "Seiko", "Omega"], "Experience":["3-days staycation in HK", "Round Trip to Japan", "Buffet voucher"]}
 	
     def proceed(users, window):
         deny = tk.Label(window, text="You do not have enough miles!", bg="#c6e5dc", fg="red")
