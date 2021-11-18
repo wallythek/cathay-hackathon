@@ -47,7 +47,7 @@ def login_(users):
             login_(users)
         else:
             wrong = Label(text="Wrong username or password!", bg="#c6e5dc", fg="red")
-            wrong.place(x=86, y=520)
+            wrong.place(x=86, y=530)
             
         
     login=Tk()
