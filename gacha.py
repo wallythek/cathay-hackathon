@@ -80,6 +80,7 @@ def gacha_spin(pie_png):
 			pygame.display.flip()
 			clock.tick(100)
 			x+=1
+
 	if (x == 18 or x == 19 or x == 20):
 		prize="red"
 	elif (x == 21 or x == 22):
@@ -89,4 +90,22 @@ def gacha_spin(pie_png):
 	master = tk.Tk()
 	master.withdraw()
 	messagebox.showinfo('Prize', f"You got {prize}!")
-	pygame.display.quit()
+	while True:
+		for event in pygame.event.get():
+			mouse = pygame.mouse.get_pos()
+#back to home screen
+			if event.type == pygame.QUIT:
+				pygame.quit()
+				sys.exit()
+			#checks if a mouse is clicked
+			if event.type == pygame.MOUSEBUTTONDOWN:
+            #if the mouse is clicked on the
+            # button the game is terminated
+				if 50 <= mouse[0] <= 126 and 560 <= mouse[1] <= 600:
+					pygame.quit()
+#back button color
+			if (50 <= mouse[0] or mouse[0] <= 126) and (560 <= mouse[1] or mouse[1] <= 600):
+				pygame.draw.rect(screen,(100,100,100),(50,560,76,40))
+			else:
+				pygame.draw.rect(screen,(170,170,170),(50,560,76,40))
+			print(mouse)
