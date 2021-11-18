@@ -34,13 +34,13 @@ def gachaa():
 	label1.image = test
 
 	# Position image
-	label1.place(x=-50, y=0)
+	label1.place(x=-100, y=80)
 	
 	b1=tk.Button(window, text="Draw!", width=12, command=proceed)
-	b1.grid(sticky="W", row=10, column=3)
+	b1.grid(sticky="E", row=10, column=1)
 
 	b1=tk.Button(window, text="Cancel", width=12, command=cancel)
-	b1.grid(sticky="E", row=10, column=0)
+	b1.grid(sticky="W", row=10, column=0)
 
 	col_count, row_count = window.grid_size()
 
@@ -56,12 +56,12 @@ def gacha_spin(pie_png):
 	pygame.init()
 	start = int(time.time())
 	clock = pygame.time.Clock()
-	screen = pygame.display.set_mode([600,600])
+	screen = pygame.display.set_mode([380,640])
 	pikachu = pygame.image.load(pie_png)
-	pikachu_rect = pikachu.get_rect(center= (300,300))
+	pikachu_rect = pikachu.get_rect(center= (190,320))
 	finger = pygame.image.load("finger.png")
-	finger = pygame.transform.scale(finger, (100, 400))
-	finger_rect = finger.get_rect(center= (300,700))
+	finger = pygame.transform.scale(finger, (300, 100))
+	finger_rect = finger.get_rect(center= (-100,320))
 	angle = 0
 	r = int(np.random.uniform(3,5))
 	end = start + r
@@ -74,7 +74,7 @@ def gacha_spin(pie_png):
 			angle += 1
 			screen.fill((255,255,255))
 			pikachu = pygame.transform.rotozoom(pikachu,angle,1)
-			pikachu_rect = pikachu.get_rect(center = (300,300))
+			pikachu_rect = pikachu.get_rect(center = (190,320))
 			screen.blit(pikachu, pikachu_rect)
 			screen.blit(finger, finger_rect)
 			pygame.display.flip()
@@ -83,5 +83,3 @@ def gacha_spin(pie_png):
 	master.withdraw()
 	messagebox.showinfo('Prize', f"You got {prize}!")
 	pygame.display.quit()
-	
-
