@@ -106,7 +106,8 @@ def gacha_spin(pie_png):
             #if the mouse is clicked on the
             # button the game is terminated
 				if (mouse[0]>=50 and mouse[0] <= 126) and (mouse[1]>=560 and mouse[1] <= 600):
-					return(0)
+					pygame.quit()
+					sys.exit()
 				elif (mouse[0]>=254 and mouse[0] <= 330) and (mouse[1]>=560 and mouse[1] <= 600):
 					gacha_spin(pie_png)
 #back button color
