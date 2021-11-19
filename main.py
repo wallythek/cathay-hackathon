@@ -116,7 +116,7 @@ def login_(users):
         b4=Button(root, text="Community", width=15, height=2, command=community,fg="black", bg="#046464")
         b4.grid(row=5, column=1)
 
-        b5=Button(root, text="Log out", width=10,fg="black", command=cancel)
+        b5=Button(root, text="Log out", width=10,fg="black", command=cancel, bg="#046464")
         b5.grid(sticky="E", row=6, column=2)
 
         col_count, row_count = root.grid_size()
