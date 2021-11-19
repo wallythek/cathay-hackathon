@@ -20,7 +20,7 @@ def vote(users):
             break
     root = Tk()
     root.title("Community")
-    root.geometry("380x640+0+0")
+    root.geometry("380x640+0+0") # LEFT CORNER AT (0,0)
     root.config(bg="#c6e5dc")
     root.resizable(0, 0)
 
