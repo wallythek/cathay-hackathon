@@ -44,10 +44,10 @@ def gachaa(flag):
     # Position image
     label1.place(x=-100, y=80)
     if (True in flag):
-        b1=tk.Button(window, text="Draw!", bg="#046464", width=12, command=lambda:proceed(flag, window))
+        b1=tk.Button(window, text="Draw!", bg="#046464", fg = "white", width=12, command=lambda:proceed(flag, window))
         b1.grid(row=10, column=1)
 
-        b1=tk.Button(window, text="Cancel", bg="#046464", width=12, command=cancel)
+        b1=tk.Button(window, text="Cancel", bg="#046464", fg = "white", width=12, command=cancel)
         b1.grid(row=10, column=0)
     else:
         deny=tk.Label(window, text="You have already drawn the weekly gacha!", fg="red", bg="#c6e5dc")
