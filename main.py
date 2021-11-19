@@ -72,7 +72,7 @@ def login_(users):
     passwordInput = Text(login, height=1, width=20, font="Calibri")
     passwordInput.place(x=90, y=500)
 
-    enter = Button(login, text="Enter", bg="#046464", fg="black", width=9, height=2, command=lambda:takeInput(users, login))
+    enter = Button(login, text="Enter", bg="#046464", fg="white", width=9, height=2, command=lambda:takeInput(users, login))
     enter.place(x=139, y=560)
         
     def main(users):
