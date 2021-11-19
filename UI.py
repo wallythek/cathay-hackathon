@@ -7,11 +7,10 @@ from PIL import ImageTk, Image
 import random
 import os
 import time
-from threading import Thread, Lock
 import numpy as np
 from datetime import datetime
 
-def UI(users):
+def Ui(users):
     own = 0
     for i, user in enumerate(users):
         if (user.getAccId() == 0):
@@ -79,33 +78,3 @@ def UI(users):
     pr = Label(root,image=p,bg="white")
     pr.place(x=109,y=480)
     tk.mainloop()
-
-def popup():
-    x = int(np.random.uniform(0,60))
-    global stampnum
-    stampnum = 0
-    def popstamp():
-	    master = tk.Tk()
-	    master.withdraw()
-	    response = messagebox.showinfo('Stamp', "Click to collect stamp!")
-	    if(response == "ok"):
-		    global stampnum
-		    stampnum += 1
-		    master = tk.Tk()
-		    master.withdraw()
-		    messagebox.showinfo('Stamp', f"You now have {stampnum} stamps!")
-		
-    while True:
-        now = str(datetime.now().time())
-        if(x == int(now[3:5])):
-            popstamp()
-            time.sleep(60)
-			
-            x = int(np.random.uniform(0,60))
-
-def run(users):
-    t1 = Thread(target=lambda:UI(users))
-    t2 = Thread(target=popup)
-    t1.start() #Calls first function
-    t2.start() #Calls second function to run at same time
-
