@@ -54,6 +54,9 @@ def gachaa():
 
 def gacha_spin(pie_png):
 	pygame.init()
+	x = 100
+	y = 0
+	os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (x,y)
 	start = int(time.time())
 	clock = pygame.time.Clock()
 	screen = pygame.display.set_mode([380,640])
