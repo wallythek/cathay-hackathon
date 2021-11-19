@@ -36,6 +36,8 @@ for _ in range(3):
         users[random.randint(0, 4)].votePost(users[random.randint(0, 4)].getPost())
         users[random.randint(0, 4)].unvotePost(users[random.randint(0, 4)].getPost())
 
+userGachaFlag = [True]
+
 def login_(users):
     def takeInput(users, login):
         username = usernameInput.get("1.0", "end-1c")
@@ -80,9 +82,9 @@ def login_(users):
                 cancel()
                 UI.Ui(users)
                 main(users)
-        def gaacha():
+        def gaacha(flag):
                 cancel()
-                gacha.gachaa()
+                gacha.gachaa(flag)
                 main(users)
         def randi(users_ = users):
                 cancel()
@@ -105,7 +107,7 @@ def login_(users):
         b1=Button(root, text="Healthy Lifestyle", width=15, height=2, fg="black", command=healthy, bg="#046464")
         b1.grid(row=2, column=1)
 
-        b2=Button(root, text="Gacha", width=15, height=2, command=gaacha,fg="black", bg="#046464")
+        b2=Button(root, text="Gacha", width=15, height=2, command=lambda:gaacha(userGachaFlag),fg="black", bg="#046464")
         b2.grid(row=3, column=1)
 
         b3=Button(root, text="Random Box", width=15, height=2, command=randi,fg="black", bg="#046464")
