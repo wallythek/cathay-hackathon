@@ -75,7 +75,6 @@ def gacha_spin(pie_png):
     clock.tick(10)
     while int(time.time())<end:
         angle += 2
-        print(angle)
         screen.fill((255,255,255))
         pikachu = pygame.transform.rotozoom(pikachu,angle,1)
         pikachu_rect = pikachu.get_rect(center = (190,320))
@@ -83,9 +82,8 @@ def gacha_spin(pie_png):
         screen.blit(finger, finger_rect)
         pygame.display.flip()
         x+=1
-        print(x)
         time.sleep(0.1)
-        
+    print(x)
     if (x>=12 and x<=14):
         prize="Apple Store $100 e-voucher"
     elif (x>=15 and x<=18):
