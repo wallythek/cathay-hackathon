@@ -64,7 +64,7 @@ def UI(users):
             label.after(random.randint(650,1300),count)
         count()
     rc = tk.Label(root,fg="black",font=("Arial",30),bg="white")
-    rc.place(x=240,y=390)
+    rc.place(x=220,y=390)
     walk(rc)
     rounda =  ImageTk.PhotoImage(Image.open("rounded_widget.png").resize((320,100), Image.ANTIALIAS))
     roundya = Label(root,image=rounda)
