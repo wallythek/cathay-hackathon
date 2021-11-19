@@ -56,9 +56,6 @@ def gacha_spin(pie_png):
 	pygame.init()
 	start = int(time.time())
 	clock = pygame.time.Clock()
-	pos_x,pos_y = 0,0
-	os.environ['SDL_VIDEO_WINDOW_POS'] = '%i,%i' % (pos_x,pos_y)
-	os.environ['SDL_VIDEO_CENTERED'] = '0'
 	screen = pygame.display.set_mode([380,640])
 	pikachu = pygame.image.load(pie_png)
 	pikachu_rect = pikachu.get_rect(center= (190,320))
