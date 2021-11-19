@@ -86,7 +86,7 @@ def gacha_spin(pie_png):
     clock.tick(10)
     while int(time.time())<end:
         angle += 2
-        screen.fill((255,255,255))
+        screen.fill((198,229,220))
         pikachu = pygame.transform.rotozoom(pikachu,angle,1)
         pikachu_rect = pikachu.get_rect(center = (190,320))
         screen.blit(pikachu, pikachu_rect)
