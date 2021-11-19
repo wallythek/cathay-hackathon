@@ -108,7 +108,7 @@ def gacha_spin(pie_png):
         prize="an error"
         print(x)
     Font=pygame.font.SysFont('arial', 18)
-    gift=Font.render(f"You got {prize}!", False, (0,255,0), None)
+    gift=Font.render(f"You got {prize}!", False, (56,126,121), None)
     screen.blit(gift, (40, 60))
     Font=pygame.font.SysFont('arial', 12)
     running = True
