@@ -54,7 +54,7 @@ def login_(users):
         
     login=Tk()
     login.title("Please login")
-    login.geometry("380x640+0+0")
+    login.geometry("380x640+0+0") # LEFT CORNER AT (0,0)
     login.resizable(0,0)
     login.config(bg="#c6e5dc")
 
@@ -98,7 +98,7 @@ def login_(users):
                 
         root=Tk()
         root.title("Portal")
-        root.geometry("380x640+0+0")
+        root.geometry("380x640+0+0") # LEFT CORNER AT (0,0)
 
         bg = ImageTk.PhotoImage(Image.open("login.jpg").resize((400,652), Image.ANTIALIAS))
         background = Label(root,image=bg,bg="white")
