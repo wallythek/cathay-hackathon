@@ -119,7 +119,7 @@ def gacha_spin(pie_png):
             #back button color
             pygame.draw.rect(screen,(56,126,121),(110,560,150,40))
             home=Font.render("Return to Home Page", False, (255,255,255), None)
-            screen.blit(home, (128, 575))
+            screen.blit(home, (133, 575))
             pygame.display.flip()
 	    #checks if a mouse is clicked
             if event.type == pygame.MOUSEBUTTONDOWN:
