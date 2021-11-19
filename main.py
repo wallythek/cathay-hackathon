@@ -104,19 +104,19 @@ def login_(users):
         background = Label(root,image=bg,bg="white")
         background.place(x=-10,y=-10)
         
-        b1=Button(root, text="Healthy Lifestyle", width=15, height=2, fg="black", command=healthy, bg="#046464")
+        b1=Button(root, text="Healthy Lifestyle", width=15, height=2, fg="white", command=healthy, bg="#046464")
         b1.grid(row=2, column=1)
 
-        b2=Button(root, text="Gacha", width=15, height=2, command=lambda:gaacha(userGachaFlag),fg="black", bg="#046464")
+        b2=Button(root, text="Gacha", width=15, height=2, command=lambda:gaacha(userGachaFlag),fg="white", bg="#046464")
         b2.grid(row=3, column=1)
 
-        b3=Button(root, text="Random Box", width=15, height=2, command=randi,fg="black", bg="#046464")
+        b3=Button(root, text="Random Box", width=15, height=2, command=randi,fg="white", bg="#046464")
         b3.grid(row=4, column=1)
 
-        b4=Button(root, text="Community", width=15, height=2, command=community,fg="black", bg="#046464")
+        b4=Button(root, text="Community", width=15, height=2, command=community,fg="white", bg="#046464")
         b4.grid(row=5, column=1)
 
-        b5=Button(root, text="Log out", width=10,fg="black", command=cancel, bg="#046464")
+        b5=Button(root, text="Log out", width=10,fg="white", command=cancel, bg="#046464")
         b5.grid(sticky="E", row=6, column=2)
 
         col_count, row_count = root.grid_size()
