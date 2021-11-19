@@ -18,9 +18,11 @@ from tkinter import messagebox
 from tkinter.ttk import *
 
 
-def gachaa():
+def gachaa(flag):
     pie_png = "newpikachu.png"
-    def proceed():
+    def proceed(flag):
+        flag.append(False)
+        flag.remove(True)
         window.destroy()
         gacha_spin(pie_png)
 
@@ -30,23 +32,29 @@ def gachaa():
     window=tk.Tk()
     window.title("e-voucher Gacha")
     window.geometry("380x640+0+0")
+    window.config(bg="#c6e5dc")
     window.resizable(0,0)
 	
     # Create a photoimage object of the image in the path
     image1 = Image.open("pikachu.png")
     test = ImageTk.PhotoImage(image1)
 
-    label1 = tk.Label(image=test)
+    label1 = tk.Label(image=test,bg="#c6e5dc")
     label1.image = test
 
     # Position image
     label1.place(x=-100, y=80)
-	
-    b1=tk.Button(window, text="Draw!", width=12, command=proceed)
-    b1.grid(row=10, column=1)
+    if (True in flag):
+        b1=tk.Button(window, text="Draw!", bg="#046464", width=12, command=lambda:proceed(flag))
+        b1.grid(row=10, column=1)
 
-    b1=tk.Button(window, text="Cancel", width=12, command=cancel)
-    b1.grid(row=10, column=0)
+        b1=tk.Button(window, text="Cancel", bg="#046464", width=12, command=cancel)
+        b1.grid(row=10, column=0)
+    else:
+        deny=tk.Label(window, text="You have already drawn the weekly gacha!", fg="red", bg="#c6e5dc")
+        deny.place(x=45,y=500)
+        b1=tk.Button(window, text="Return to Home Page", width=20, height=2, bg="#046464", command=cancel)
+        b1.place(x=95,y=550)
 
     col_count, row_count = window.grid_size()
 
@@ -63,6 +71,8 @@ def gacha_spin(pie_png):
     pygame.display.set_caption("Spin!")
     clock = pygame.time.Clock()
     screen = pygame.display.set_mode([380,640])
+    screen.fill((198,229,220))
+    pygame.display.flip()
     pikachu = pygame.image.load(pie_png)
     pikachu_rect = pikachu.get_rect(center= (190,320))
     finger = pygame.image.load("finger.png")
@@ -85,56 +95,39 @@ def gacha_spin(pie_png):
         x+=1
         time.sleep(0.1)
     print(x)
-    if (x>=12 and x<=14):
+        
+    if (x>=13 and x<=14):
         prize="Apple Store $100 e-voucher"
     elif (x>=15 and x<=18):
         prize="Adidas $200 e-voucher"
-    elif (x<=11 and x>=9):
+    elif (x<=12 and x>=9):
         prize="ParknShop $50 e-voucher"
     elif(x == 5 or x == 10):
         prize="Kowloon Shangri-La 1-night-staycation voucher"
     else:
         prize="an error"
         print(x)
-    master = tk.Tk()
-    master.withdraw()
-    messagebox.showinfo('Prize', f"You got {prize}!")
+    Font=pygame.font.SysFont('arial', 18)
+    gift=Font.render(f"You got {prize}!", False, (0,255,0), None)
+    screen.blit(gift, (40, 60))
+    Font=pygame.font.SysFont('arial', 12)
     while True:
         for event in pygame.event.get():
             mouse = pygame.mouse.get_pos()
-            Font=pygame.font.SysFont('arial', 12)
 #back to home screen
             if event.type == pygame.QUIT:
-                break
+                pygame.quit()
+                sys.exit()
 			#checks if a mouse is clicked
             if event.type == pygame.MOUSEBUTTONDOWN:
             #if the mouse is clicked on the
             # button the game is terminated
-                if (mouse[0]>=50 and mouse[0] <= 126) and (mouse[1]>=560 and mouse[1] <= 600):
-                    break
-                elif (mouse[0]>=254 and mouse[0] <= 330) and (mouse[1]>=560 and mouse[1] <= 600):
-                    gacha_spin(pie_png)
+                if (mouse[0]>=110 and mouse[0] <= 260) and (mouse[1]>=560 and mouse[1] <= 600):
+                    print("clicked")
+                    pygame.quit()
+                    sys.exit()
 #back button color
-            if (mouse[0]>=50 and mouse[0] <= 126) and (mouse[1]>=560 and mouse[1] <= 600):
-                pygame.draw.rect(screen,(56,126,121),(50,560,76,40))
-                home=Font.render("Home", False, (255,255,255), None)
-                newgame=Font.render("Again", False, (255,255,255), None)
-                screen.blit(home, (75, 570))
-                screen.blit(newgame, (278, 570))
-            elif(mouse[0]>=254 and mouse[0] <= 330) and (mouse[1]>=560 and mouse[1] <= 600):
-                pygame.draw.rect(screen,(56,126,121),(254,560,76,40))
-                home=Font.render("Home", False, (255,255,255), None)
-                newgame=Font.render("Again", False, (255,255,255), None)
-                screen.blit(home, (75, 570))
-                screen.blit(newgame, (278, 570))
-            else:
-                pygame.draw.rect(screen,(0,93,99),(50,560,76,40))
-                pygame.draw.rect(screen,(0,93,99),(254,560,76,40))
-                home=Font.render("Home", False, (255,255,255), None)
-                newgame=Font.render("Again", False, (255,255,255), None)
-                screen.blit(home, (75, 570))
-                screen.blit(newgame, (278, 570))
+            pygame.draw.rect(screen,(56,126,121),(110,560,150,40))
+            home=Font.render("Return to Home Page", False, (255,255,255), None)
+            screen.blit(home, (128, 575))
             pygame.display.flip()
-            
-    pygame.quit()
-    sys.exit()
