@@ -96,7 +96,7 @@ def login_(users):
                 
         root=Tk()
         root.title("Portal")
-        root.geometry("380x640")
+        root.geometry("380x640+0+0")
 
         bg = ImageTk.PhotoImage(Image.open("login.jpg").resize((400,652), Image.ANTIALIAS))
         background = Label(root,image=bg,bg="white")
