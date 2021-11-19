@@ -19,7 +19,7 @@ def Ui(users):
     
     root = Tk()
     root.title("Healthy Lifestyle")
-    root.geometry("380x640")
+    root.geometry("380x640+0+0")
     root.resizable(0, 0)
 
     homeButton = Button(root, text="Return to Home Page", command=root.destroy)
