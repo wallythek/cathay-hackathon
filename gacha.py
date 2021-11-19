@@ -8,8 +8,6 @@ import numpy as np
 from datetime import datetime, timedelta
 from threading import Thread
 from time import sleep
-import sys
-import random
 import pygame
 import tkinter as tk
 from PIL import ImageTk, Image
@@ -20,7 +18,7 @@ from tkinter.ttk import *
 
 def gachaa(flag):
     pie_png = "newpikachu.png"
-    def proceed(flag):
+    def proceed(flag, window):
         flag.append(False)
         flag.remove(True)
         window.destroy()
@@ -45,7 +43,7 @@ def gachaa(flag):
     # Position image
     label1.place(x=-100, y=80)
     if (True in flag):
-        b1=tk.Button(window, text="Draw!", bg="#046464", width=12, command=lambda:proceed(flag))
+        b1=tk.Button(window, text="Draw!", bg="#046464", width=12, command=lambda:proceed(flag, window))
         b1.grid(row=10, column=1)
 
         b1=tk.Button(window, text="Cancel", bg="#046464", width=12, command=cancel)
@@ -111,23 +109,21 @@ def gacha_spin(pie_png):
     gift=Font.render(f"You got {prize}!", False, (0,255,0), None)
     screen.blit(gift, (40, 60))
     Font=pygame.font.SysFont('arial', 12)
-    while True:
+    running = True
+    while (running):
         for event in pygame.event.get():
             mouse = pygame.mouse.get_pos()
-#back to home screen
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-			#checks if a mouse is clicked
-            if event.type == pygame.MOUSEBUTTONDOWN:
-            #if the mouse is clicked on the
-            # button the game is terminated
-                if (mouse[0]>=110 and mouse[0] <= 260) and (mouse[1]>=560 and mouse[1] <= 600):
-                    print("clicked")
-                    pygame.quit()
-                    sys.exit()
-#back button color
+            
+            #back button color
             pygame.draw.rect(screen,(56,126,121),(110,560,150,40))
             home=Font.render("Return to Home Page", False, (255,255,255), None)
             screen.blit(home, (128, 575))
             pygame.display.flip()
+	    #checks if a mouse is clicked
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                #if the mouse is clicked on the
+                # button the game is terminated
+                if (mouse[0]>=110 and mouse[0] <= 260) and (mouse[1]>=560 and mouse[1] <= 600):
+                    running = False
+                    pygame.quit()
+                    break
