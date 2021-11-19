@@ -60,6 +60,7 @@ def gachaa():
 
 def gacha_spin(pie_png):
     pygame.init()
+    pygame.display.set_caption("Spin!")
     clock = pygame.time.Clock()
     screen = pygame.display.set_mode([380,640])
     pikachu = pygame.image.load(pie_png)
