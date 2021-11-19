@@ -43,7 +43,7 @@ def vote(users):
     gshare= ImageTk.PhotoImage(Image.open("share.png").resize((20,20), Image.ANTIALIAS))
     comment = ImageTk.PhotoImage(Image.open("comment.png").resize((20,20), Image.ANTIALIAS))
 
-    homeButton = Button(root, text="Return to Home Page", width=20, fg="white", bg="#046464", command=root.destroy)
+    homeButton = Button(root, text="Return to Home Page", width=20, fg="black", bg="#046464", command=root.destroy)
     homeButton.place(x=190,y=10)
     
     for i in range(len(users) // 2):
