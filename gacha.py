@@ -79,13 +79,13 @@ def gacha_spin(pie_png):
 			pygame.display.flip()
 			clock.tick(100)
 			x+=1
-	if (x == 2 or x == 18 or x == 19 or x == 20):
+	if (x<5 or x == 18 or x == 19 or x == 20):
 		prize="Apple Store $100 e-voucher"
-	elif (x == 21 or x == 22):
+	elif (x == 21 or x == 22 or x == 11):
 		prize="Adidas $200 e-voucher"
 	elif (x == 23 or x == 16):
 		prize="ParknShop $50 e-voucher"
-	elif(x == 10):
+	elif(x == 5 or x == 10):
 		prize="Kowloon Shangri-La 1-night-staycation voucher"
 	else:
 		prize="an error"
