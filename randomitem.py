@@ -77,10 +77,10 @@ def random_item(users):
         e1.current(0)
         e1.bind("<<ComboboxSelected>>",x)
 
-        b1=tk.Button(window, text="Cancel", width=12, height=2, fg="white", bg="#046464", command=lambda:refund(users, window))
+        b1=tk.Button(window, text="Cancel", width=12, height=2, fg="black", bg="#046464", command=lambda:refund(users, window))
         b1.grid(sticky = "E", row=10, column=0)
         
-        b2=tk.Button(window, text="Use 100 miles", width=12, height=2, fg="white", bg="#046464", command=lambda:choose(users, b1, b2))
+        b2=tk.Button(window, text="Use 100 miles", width=12, height=2, fg="black", bg="#046464", command=lambda:choose(users, b1, b2))
         b2.grid(sticky = "W", row=10, column=2)
 
         col_count, row_count = window.grid_size()
