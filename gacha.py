@@ -1,3 +1,4 @@
+import os
 import numpy as np
 from datetime import datetime, timedelta
 from threading import Thread
@@ -29,7 +30,7 @@ def gachaa(flag):
 
     window=tk.Tk()
     window.title("e-voucher Gacha")
-    window.geometry("380x640+0+0")
+    window.geometry("380x640+0+0") # LEFT CORNER AT (0,0)
     window.config(bg="#c6e5dc")
     window.resizable(0,0)
 	
@@ -65,6 +66,7 @@ def gachaa(flag):
 
 
 def gacha_spin(pie_png):
+    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (0,0) # LEFT CORNER AT (0,0)
     pygame.init()
     pygame.display.set_caption("Spin!")
     clock = pygame.time.Clock()
