@@ -10,7 +10,7 @@ from PIL import ImageTk, Image
 import time
 from tkinter import messagebox
 from tkinter.ttk import *
-
+import os
 
 def gachaa():
 	pie_png = "newpikachu.png"
