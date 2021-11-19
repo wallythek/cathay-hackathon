@@ -52,7 +52,7 @@ def login_(users):
         
     login=Tk()
     login.title("Please login")
-    login.geometry("380x640")
+    login.geometry("380x640+0+0")
     login.resizable(0,0)
     login.config(bg="#c6e5dc")
 
