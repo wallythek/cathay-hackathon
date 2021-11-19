@@ -56,7 +56,7 @@ def random_item(users):
 
         window = tk.Tk()
         window.title("Random surprise")
-        window.geometry("380x640")
+        window.geometry("380x640+0+0")
         window.config(bg="#c6e5dc")
         window.resizable(0,0)
         image1 = Image.open("randombox.png")
@@ -94,7 +94,7 @@ def random_item(users):
 
     window=tk.Tk()
     window.title("Random surprise")
-    window.geometry("380x640")
+    window.geometry("380x640+0+0")
     window.config(bg="#c6e5dc")
     window.resizable(0,0)
 
