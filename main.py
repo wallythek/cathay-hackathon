@@ -78,7 +78,7 @@ def login_(users):
             root.destroy()
         def healthy():
                 cancel()
-                UI.run(users)
+                UI.Ui(users)
                 main(users)
         def gaacha():
                 cancel()
